@@ -1,0 +1,16 @@
+angular.module('app',['ngRoute','aside','head','index','login'])
+.config(['$routeProvider',function($routeProvider){
+    $routeProvider
+    .when('/index',{
+        template:'<ngl-aside></ngl-aside><ngl-index></ngl-index>'
+    })
+    .when('/',{
+        redirectTo:'/index'
+    })
+    .when('/login',{
+        template:'<ngl-login></ngl-login>'
+    })
+    .otherwise({
+        templateUrl:'/src/html/404.html'
+    })
+}])
